@@ -14,7 +14,19 @@ public class Jankencard {
 		
 		String playerInput = scanner.nextLine();
 		
-		System.out.println("あなたの入力:" + playerInput);
+		String playerHand = "";
+		
+		if(playerInput.equals("g")) {
+			playerHand = "グー";
+		}else if(playerInput.equals("c")) {
+			playerHand = "チョキ";
+		}else if(playerInput.equals("p")) {
+			playerHand = "パー";
+		}else {
+			playerHand = "不正な入力";
+		}
+		
+		System.out.println("あなた:" + playerHand);
 		
 		scanner.close();
 	}
