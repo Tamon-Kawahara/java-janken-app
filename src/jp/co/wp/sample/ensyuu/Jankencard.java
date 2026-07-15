@@ -6,28 +6,41 @@ public class Jankencard {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		
+
 		System.out.println("*******************");
 		System.out.println("じゃんけんをしましょう！");
 		System.out.println("*******************");
 		System.out.println("3つから選択してください(g:グー、c:チョキ、p:パー)>");
-		
+
 		String playerInput = scanner.nextLine();
-		
+
 		String playerHand = "";
-		
-		if(playerInput.equals("g")) {
+
+		if (playerInput.equals("g")) {
 			playerHand = "グー";
-		}else if(playerInput.equals("c")) {
+		} else if (playerInput.equals("c")) {
 			playerHand = "チョキ";
-		}else if(playerInput.equals("p")) {
+		} else if (playerInput.equals("p")) {
 			playerHand = "パー";
-		}else {
+		} else {
 			playerHand = "不正な入力";
 		}
-		
+
+		int computerNumber = (int) (Math.random() * 3);
+
+		String computerHand = "";
+
+		if (computerNumber == 0) {
+			computerHand = "グー";
+		} else if (computerNumber == 1) {
+			computerHand = "チョキ";
+		} else if (computerNumber == 2) {
+			computerHand = "パー";
+		}
+
 		System.out.println("あなた:" + playerHand);
-		
+		System.out.println("コンピューター:" + computerHand);
+
 		scanner.close();
 	}
 
