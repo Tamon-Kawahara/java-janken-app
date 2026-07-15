@@ -38,8 +38,22 @@ public class Jankencard {
 			computerHand = "パー";
 		}
 
-		System.out.println("あなた:" + playerHand);
-		System.out.println("コンピューター:" + computerHand);
+		String result = "";
+
+		if (playerHand.equals("不正な入力")) {
+			result = "正しい文字を入力してください";
+		} else if (playerHand.equals(computerHand)) {
+			result = "→Draw";
+		} else if (playerHand.equals("グー") && computerHand.equals("チョキ") ||
+				playerHand.equals("チョキ") && computerHand.equals("パー") ||
+				playerHand.equals("パー") && computerHand.equals("グー")) {
+			result = "→You Win!";
+		} else {
+			result = "→You Lose...";
+		}
+
+		System.out.println("あなた:" + playerHand + " コンピューター:" + computerHand);
+		System.out.println(result);
 
 		scanner.close();
 	}
