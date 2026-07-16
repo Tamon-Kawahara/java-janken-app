@@ -30,7 +30,8 @@ public class Jankencard {
 			} else if (playerInput.equals("p")) {
 				playerHand = "パー";
 			} else {
-				playerHand = "不正な入力";
+				System.out.println("正しい文字を入力してください。");
+				continue;
 			}
 
 			int computerNumber = (int) (Math.random() * 3);
@@ -47,9 +48,7 @@ public class Jankencard {
 
 			String result = "";
 
-			if (playerHand.equals("不正な入力")) {
-				result = "正しい文字を入力してください";
-			} else if (playerHand.equals(computerHand)) {
+			if (playerHand.equals(computerHand)) {
 				result = "→Draw";
 			} else if (playerHand.equals("グー") && computerHand.equals("チョキ") ||
 					playerHand.equals("チョキ") && computerHand.equals("パー") ||
